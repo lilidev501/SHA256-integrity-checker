@@ -33,7 +33,7 @@ def check_integrity(folder):
         path = os.path.join(folder, file)
         if os.path.isfile(path):
             current = hash_file(path)
-            if path not in baseline:
+            if file not in baseline:
                 print(f"[NEW] {file}")
             elif baseline[path] != current:
                 print(f"[MODIFIED] {file}")
@@ -50,3 +50,4 @@ if __name__ == "__main__":
         check_integrity(folder)
     else:
         print("Invalid choice.")
+
